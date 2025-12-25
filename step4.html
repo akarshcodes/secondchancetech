@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Step 4</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/step4.css"> 
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="js/main.js"></script>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div>
+
+    <main class="success-wrapper">
+        
+        <!-- Success Icon -->
+        <div class="icon-container">
+            <!-- Replace 'assets/success-check.png' with your actual icon image path -->
+            <img src="image/verify.png" class="success-icon-img" alt="Success Icon" onerror="this.src='https://placehold.co/100x100/797979/white?text=✓'">
+        </div>
+
+        <!-- Heading -->
+        <h1 class="thank-you-title">Thank You For Purchasing</h1>
+
+        <!-- Navigation Button -->
+        <a href="index.html" class="btn-home">Home</a>
+
+    </main>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script>w3.includeHTML();</script>
+
+</body>
+</html>
