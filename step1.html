@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Step 1 Address</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/step1.css"> 
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    <script src="js/main.js"></script> </head>
+</head>
+<body>
+
+    <div w3-include-html="header.html"></div>
+
+    <!-- Progress Steps -->
+    <div class="steps-wrapper">
+        <!-- Step 1 (Active) -->
+        <div class="step-item">
+            <div class="step-icon">
+                <img src="image/Location.png" class="step-icon-img" alt="Step 1">
+            </div>
+            <div class="step-info">
+                <span class="step-label">Step 1</span>
+                <span class="step-title">Address</span>
+            </div>
+        </div>
+
+        <div class="step-divider"></div>
+
+        <!-- Step 2 (Inactive) -->
+        <div class="step-item inactive">
+            <div class="step-icon">
+                <img src="image/Shipping.png" class="step-icon-img" alt="Step 2">
+            </div>
+            <div class="step-info">
+                <span class="step-label">Step 2</span>
+                <span class="step-title">Shipping</span>
+            </div>
+        </div>
+
+        <div class="step-divider"></div>
+
+        <!-- Step 3 (Inactive) -->
+        <div class="step-item inactive">
+            <div class="step-icon">
+                <img src="image/payment.png" class="step-icon-img" alt="Step 3">
+            </div>
+            <div class="step-info">
+                <span class="step-label">Step 2</span>
+                <span class="step-title">Payment</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="content-wrapper">
+        <h2 class="section-title">Select Address</h2>
+        
+        <div class="address-list">
+            <!-- Address Card 1 (Selected) -->
+            <div class="address-card selected">
+                <div class="address-card-info">
+                    <div class="address-header">
+                        <div class="custom-radio">
+                            <div class="radio-dot"></div>
+                        </div>
+                        <span class="user-name">Ong An Yi</span>
+                    </div>
+                    <div class="address-details">
+                        <p class="address-line">41, Jalan Midah, Taman Indah, 11800, Gelugor, Pulau Pinang</p>
+                        <p class="address-line">013 - 82345678</p>
+                    </div>
+                </div>
+                <div class="address-actions">
+                    <button class="icon-btn">
+                        <img src="image/Edit.png" class="icon-img" alt="Edit">
+                    </button>
+                    <button class="icon-btn">
+                        <img src="image/Close.png" class="icon-img" alt="Delete">
+                    </button>
+                </div>
+            </div>
+
+            <!-- Address Card 2 -->
+            <div class="address-card">
+                <div class="address-card-info">
+                    <div class="address-header">
+                        <div class="custom-radio">
+                            <div class="radio-dot"></div>
+                        </div>
+                        <span class="user-name">Gooi Hooi Qi</span>
+                    </div>
+                    <div class="address-details">
+                        <p class="address-line">The Parcel, Lot A Uptown Mall, Universiti Sains Malaysia, Timur Laut, 11800, Pulau Pinang</p>
+                        <p class="address-line">012 - 56789102</p>
+                    </div>
+                </div>
+                <div class="address-actions">
+                    <button class="icon-btn">
+                        <img src="image/Edit.png" class="icon-img" alt="Edit">
+                    </button>
+                    <button class="icon-btn">
+                        <img src="image/Close.png" class="icon-img" alt="Delete">
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Add Address Section -->
+        <div class="add-address-trigger">
+            <div class="divider-row">
+                <div class="h-line"></div>
+                <div class="add-icon-box">
+                    <img src="image/Plus.png" class="icon-img" alt="Add">
+                </div>
+                <div class="h-line"></div>
+            </div>
+            <div class="add-text">Add New Address</div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <div class="nav-footer">
+            <button class="btn btn-back">Back</button>
+            <button class="btn btn-next">Next</button>
+        </div>
+    </main>
+
+    <div w3-include-html="footer.html"></div>
+
+    <script>w3.includeHTML();</script>
+
+</body>
+</html>
