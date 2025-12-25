@@ -2,7 +2,7 @@
     --primary-navy: #313647;
     --text-navy: #17183B;
     --text-muted: #A2A3B1;
-    --bg-grey: #F6F6F6;
+    --border-light: #D1D1D8;
     --border-line: #E6E6E6;
     --font-main: 'Droid Sans', sans-serif;
 }
@@ -16,10 +16,16 @@
 body {
     background-color: #ffffff;
     font-family: var(--font-main);
-    color: var(--text-navy);
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
+}
+
+.page-wrapper {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
 }
 
 /* --- PROGRESS STEPS --- */
@@ -95,179 +101,126 @@ body {
     margin: 0 10px;
 }
 
-/* --- CONTENT SECTION --- */
-.content-wrapper {
+/* --- MAIN CONTENT --- */
+.main-content {
     width: 100%;
-    max-width: 1441px;
-    padding: 10px 160px;
+    padding: 0 160px 48px 160px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 86px;
+}
+
+.shipment-section {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
 
 .section-title {
+    color: var(--text-navy);
     font-size: 20px;
     font-weight: 700;
     line-height: 24px;
-    color: var(--text-navy);
 }
 
-.address-list {
+.shipment-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 16px;
+    width: 100%;
 }
 
-.address-card {
-    width: 100%;
-    padding: 24px;
-    background: var(--bg-grey);
-    border-radius: 7px;
+.shipment-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 24px;
+    border-radius: 11px;
+    border: 1px solid var(--border-light);
     cursor: pointer;
-    transition: transform 0.1s;
+    transition: background-color 0.2s;
 }
 
-.address-card:hover {
-    filter: brightness(0.98);
-}
-
-.address-card-info {
-    flex: 1 1 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.address-header {
+.card-left {
     display: flex;
     align-items: center;
     gap: 16px;
+    flex: 1;
 }
 
-.custom-radio {
+.radio-box {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.radio-outer {
     width: 24px;
     height: 24px;
     border: 2px solid var(--primary-navy);
     border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
+    position: absolute;
 }
 
-.radio-dot {
+.radio-inner {
     width: 12px;
     height: 12px;
     background: var(--primary-navy);
     border-radius: 50%;
+    position: absolute;
+    left: 6px;
+    top: 6px;
     display: none;
 }
 
-.selected .radio-dot {
+.shipment-card[data-state="Selected"] .radio-inner {
     display: block;
 }
 
-.user-name {
-    color: var(--text-navy);
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.15px;
+.price-text {
+    width: 68px;
+    color: var(--primary-navy);
+    font-size: 16px;
+    letter-spacing: 0.10px;
 }
 
-.address-details {
-    padding-left: 40px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.address-line {
+.method-text {
+    flex: 1 1 0;
     color: var(--text-navy);
     font-size: 16px;
-    line-height: 24px;
 }
 
-/* Action Buttons Area */
-.address-actions {
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-}
-
-.icon-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.icon-img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-}
-
-/* --- ADD NEW ADDRESS --- */
-.add-address-trigger {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-}
-
-.divider-row {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    gap: 24px;
-}
-
-.h-line {
-    flex: 1 1 0;
-    height: 0.5px;
-    background: black;
-}
-
-.add-icon-box {
-    width: 24px;
-    height: 24px;
-}
-
-.add-text {
-    color: var(--primary-navy);
-    font-size: 14px;
+.date-text {
+    color: var(--text-navy);
+    font-size: 16px;
     letter-spacing: 0.10px;
-    cursor: pointer;
 }
 
-/* --- NAV FOOTER --- */
-.nav-footer {
-    width: 100%;
+.shipment-card[data-state="Not Selected"] .price-text,
+.shipment-card[data-state="Not Selected"] .method-text,
+.shipment-card[data-state="Not Selected"] .date-text {
+    color: var(--text-muted);
+}
+
+.button-group {
     display: flex;
     justify-content: flex-end;
-    gap: 24px;
-    margin-top: 20px;
-    margin-bottom: 40px;
+    gap: 23px;
+    width: 100%;
 }
 
 .btn {
     padding: 24px 86px;
     border-radius: 6px;
     font-size: 16px;
+    font-weight: 400;
     cursor: pointer;
     text-align: center;
-    transition: opacity 0.2s;
     border: none;
     font-family: var(--font-main);
+    transition: opacity 0.2s;
 }
 
 .btn-back {
@@ -285,15 +238,14 @@ body {
     opacity: 0.8;
 }
 
-@media (max-width: 1024px) {
-
-    .steps-wrapper,
-    .content-wrapper {
-        padding-left: 40px;
-        padding-right: 40px;
+@media (max-width: 1440px) {
+    .page-wrapper {
+        width: 100%;
     }
 
-    .step-divider {
-        display: none;
+    .steps-wrapper,
+    .main-content {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 }
