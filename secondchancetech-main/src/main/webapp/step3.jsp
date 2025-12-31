@@ -15,7 +15,6 @@
 
     <jsp:include page="header.jsp" />
 
-    <!-- Progress Steps -->
     <div class="steps-wrapper">
         <div class="step-item inactive">
             <div class="step-icon">
@@ -52,16 +51,13 @@
         </div>
     </div>
 
-    <!-- Main Content -->
     <main class="checkout-main">
 
-        <!-- Summary -->
         <aside class="summary-column">
             <h2 class="summary-title">Summary</h2>
 
             <div class="product-list" id="productList">
-                <!-- Products will be rendered here -->
-            </div>
+                </div>
 
             <div class="summary-details-section">
                 <div class="detail-group">
@@ -90,7 +86,6 @@
             </div>
         </aside>
 
-        <!-- Payment -->
         <section class="payment-column">
             <div class="payment-header">
                 <h2 class="payment-title">Payment</h2>
@@ -99,30 +94,22 @@
                 </div>
             </div>
 
-            <!-- Visual Card Container -->
-            <div class="visual-card">
-                <div class="card-chip"></div>
-                <div class="card-number-row" id="visualCardNumber">
-                    <span>••••</span> <span>••••</span> <span>••••</span> <span>••••</span>
-                </div>
-                <div class="card-footer">
-                    <div class="cardholder-label" id="visualCardHolder">Cardholder</div>
-                    <div class="card-logos">
-                        <div class="logo-circle" style="background: #FF0006; margin-right: -10px;"></div>
-                        <div class="logo-circle" style="background: #F9A000;"></div>
-                    </div>
-                </div>
+            <div class="visual-card-container" style="text-align: center; margin-bottom: 20px;">
+                <img src="${pageContext.request.contextPath}/assets/card.png"
+                     alt="Accepted Cards"
+                     style="max-width: 100%; height: auto; border-radius: 8px;">
             </div>
 
             <form id="paymentForm" onsubmit="processPayment(event)">
                 <div class="payment-form">
                     <input type="text" name="cardholderName" id="cardholderName"
-                           class="input-field" placeholder="Cardholder Name" required
-                           oninput="updateVisualCard()">
+                           class="input-field" placeholder="Cardholder Name" required>
+
                     <input type="text" name="cardNumber" id="cardNumber"
                            class="input-field" placeholder="Card Number" required
                            maxlength="19" pattern="[0-9\s]+"
-                           oninput="formatCardNumber(this); updateVisualCard()">
+                           oninput="formatCardNumber(this)">
+
                     <div class="form-row">
                         <input type="text" name="expDate" id="expDate"
                                class="input-field" placeholder="MM/YY" required

@@ -74,24 +74,6 @@ function formatExpDate(input) {
     input.value = value;
 }
 
-function updateVisualCard() {
-    // Update card number display
-    const cardNumber = document.getElementById('cardNumber').value;
-    const groups = cardNumber.split(' ');
-    const visualGroups = groups.map(g => g || '••••');
-    while (visualGroups.length < 4) {
-        visualGroups.push('••••');
-    }
-
-    document.getElementById('visualCardNumber').innerHTML =
-        visualGroups.map(g => `<span>${g}</span>`).join(' ');
-
-    // Update cardholder name
-    const cardholderName = document.getElementById('cardholderName').value;
-    document.getElementById('visualCardHolder').textContent =
-        cardholderName || 'Cardholder';
-}
-
 function processPayment(event) {
     event.preventDefault();
 
@@ -114,7 +96,7 @@ function processPayment(event) {
         return;
     }
 
-    // Save payment info (in real app, this would be sent to payment processor)
+    // Save payment info
     const paymentData = {
         cardholderName: document.getElementById('cardholderName').value,
         cardNumber: '•••• •••• •••• ' + cardNumber.slice(-4),
