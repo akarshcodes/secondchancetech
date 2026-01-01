@@ -94,10 +94,10 @@
                 </div>
             </div>
 
-            <div class="visual-card-container" style="text-align: center; margin-bottom: 20px;">
+            <div class="card-container" style="text-align: center; margin-bottom: 20px;">
                 <img src="${pageContext.request.contextPath}/assets/card.png"
                      alt="Accepted Cards"
-                     style="max-width: 100%; height: auto; border-radius: 8px;">
+                     style="width: 337px; height: 190px;max-width: 100%; height: auto; border-radius: 8px;">
             </div>
 
             <form id="paymentForm" onsubmit="processPayment(event)">

@@ -6,7 +6,7 @@
                 sku: "#25139526913984",
                 price: 2499,
                 quantity: 1,
-                image: "assets/iphone.png"
+                image: "assets/product iphone 14 pro max.png"
             },
             {
                 id: 2,
@@ -22,7 +22,7 @@
                 sku: "#63632324",
                 price: 1399,
                 quantity: 1,
-                image: "assets/AppleWatch.png"
+                image: "assets/product apple watch series 9.png"
             }
         ];
 
