@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/variables.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/layout.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/checkout.css">
-    <script src="${pageContext.request.contextPath}/js/step2.js" defer></script>
 </head>
 
 <body>
@@ -70,6 +69,8 @@
     </main>
 
     <jsp:include page="footer.jsp" />
+
+    <script src="${pageContext.request.contextPath}/js/step2.js" defer></script>
 
 </body>
 </html>

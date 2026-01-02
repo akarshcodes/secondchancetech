@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/variables.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/layout.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/checkout.css">
-    <script src="${pageContext.request.contextPath}/js/step1.js" defer></script>
 </head>
 <body>
 
@@ -63,7 +62,7 @@
         </div>
 
         <!-- Add Address Section -->
-        <div class="add-address-trigger">
+        <div class="add-address-trigger" onclick="openAddressModal()">
             <div class="divider-row">
                 <div class="h-line"></div>
                 <div class="add-icon-box">
@@ -71,7 +70,7 @@
                 </div>
                 <div class="h-line"></div>
             </div>
-            <div class="add-text" onclick="openAddressModal()">Add New Address</div>
+            <div class="add-text">Add New Address</div>
         </div>
 
         <!-- Action Buttons -->
@@ -82,7 +81,7 @@
     </main>
 
     <!-- Address Modal -->
-    <div id="addressModal" class="modal" style="display: none;">
+    <div id="addressModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title" id="modalTitle">Add New Address</h3>
@@ -122,6 +121,8 @@
     </div>
 
     <jsp:include page="footer.jsp" />
+
+    <script src="${pageContext.request.contextPath}/js/step1.js"></script>
 
 </body>
 </html>

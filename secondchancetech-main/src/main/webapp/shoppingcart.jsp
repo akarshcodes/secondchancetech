@@ -9,8 +9,6 @@
     <link rel="stylesheet" href="css/layout.css" />
     <link rel="stylesheet" href="css/variables.css" />
     <link rel="stylesheet" href="css/shoppingcart.css" />
-    <link rel="javascript" href="css/shoppingcart.css" />
-    <script src="${pageContext.request.contextPath}/js/shoppingcart.js" defer></script>
 </head>
 
 <body>
@@ -50,6 +48,8 @@
     </main>
 
     <jsp:include page="footer.jsp" />
+
+    <script src="${pageContext.request.contextPath}/js/shoppingcart.js" defer></script>
 
 </body>
 </html>

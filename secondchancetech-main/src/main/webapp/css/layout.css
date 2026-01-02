@@ -1,6 +1,29 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--font-main); background: var(--main-milk-white); }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: var(--font-main);
+    background: var(--main-milk-white);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+.main-footer {
+    flex-shrink: 0;
+    width: 100%;
+}
 
 .top-nav {
     display: flex;
