@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="unnamed">
+    <output-path>$PROJECT_DIR$/out/artifacts/unnamed</output-path>
+    <root id="root">
+      <element id="module-output" name="SecondChanceTech" />
+      <element id="library" level="project" name="Maven: jakarta.el:jakarta.el-api:5.0.0" />
+      <element id="library" level="project" name="Maven: jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0" />
+      <element id="library" level="project" name="Maven: org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1" />
+      <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
+      <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.45.1.0" />
+    </root>
+  </artifact>
+</component>

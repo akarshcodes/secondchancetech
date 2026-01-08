@@ -11,7 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/payments")
+@WebServlet({"/step1.jsp", "/step2.jsp", "/step3.jsp", "/step4.jsp"})
 public class UserPaymentServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -19,6 +19,7 @@ public class UserPaymentServlet extends HttpServlet {
         UserPaymentDAO dao = new UserPaymentDAO();
         List<UserPayment> payments = dao.getAllPayments();
         req.setAttribute("payments", payments);
-        req.getRequestDispatcher("/jsp/payments.jsp").forward(req, resp);
+        String path = req.getServletPath();
+        req.getRequestDispatcher("/WEB-INF/views" + path).forward(req, resp);
     }
 }
