@@ -74,7 +74,7 @@ function formatExpDate(input) {
     input.value = value;
 }
 
-function processPayment(event) {
+async function processPayment(event) {
     event.preventDefault();
 
     // Validate form
@@ -120,11 +120,87 @@ function processPayment(event) {
 
     sessionStorage.setItem('orderSummary', JSON.stringify(orderSummary));
 
+    // Mark cart as paid in backend
+    try {
+        const formData = new FormData();
+        formData.append('action', 'checkout');
+
+        await fetch('api/cart', {
+            method: 'POST',
+            body: formData
+        });
+    } catch (error) {
+        console.error('Error completing checkout:', error);
+    }
+
     // Redirect to success page
     window.location.href = 'step4.jsp';
 }
 
-// Initialize on page load
+// Keep all other existing functions unchanged
+function loadSummary() {
+    const cartItems = JSON.parse(sessionStorage.getItem('cartItems') || '[]');
+    const productContainer = document.getElementById('productList');
+
+    productContainer.innerHTML = '';
+
+    let productSubtotal = 0;
+
+    cartItems.forEach(item => {
+        let itemTotalPrice = item.price * item.quantity;
+        productSubtotal = productSubtotal + itemTotalPrice;
+
+        const productDiv = document.createElement('div');
+        productDiv.className = 'product-item';
+        productDiv.innerHTML = `
+            <div class="product-img-box">
+                <img src="${item.image}" class="product-img" alt="${item.name}">
+            </div>
+            <div class="product-info">
+                <span class="product-name">${item.name}</span>
+                <span class="product-price">RM ${itemTotalPrice}</span>
+            </div>
+        `;
+        productContainer.appendChild(productDiv);
+    });
+
+    const selectedAddress = JSON.parse(sessionStorage.getItem('selectedAddress') || '{}');
+    document.getElementById('summaryAddress').textContent =
+        selectedAddress.address || 'No address selected';
+
+    const selectedShipping = JSON.parse(sessionStorage.getItem('selectedShipping') || '{}');
+    document.getElementById('summaryShipment').textContent =
+        selectedShipping.method || 'No shipping method selected';
+
+    let shippingFee = parseFloat(sessionStorage.getItem('shipping'));
+    if (isNaN(shippingFee)) {
+        shippingFee = 0;
+    }
+
+    let finalTotal = productSubtotal + shippingFee;
+
+    document.getElementById('summarySubtotal').textContent = "RM " + productSubtotal;
+    document.getElementById('summaryShipping').textContent = "RM " + shippingFee;
+    document.getElementById('summaryTotal').textContent = "RM " + finalTotal;
+
+    sessionStorage.setItem('subtotal', productSubtotal);
+    sessionStorage.setItem('total', finalTotal);
+}
+
+function formatCardNumber(input) {
+    let value = input.value.replace(/\s/g, '');
+    let formatted = value.match(/.{1,4}/g);
+    input.value = formatted ? formatted.join(' ') : value;
+}
+
+function formatExpDate(input) {
+    let value = input.value.replace(/\D/g, '');
+    if (value.length >= 2) {
+        value = value.substring(0, 2) + '/' + value.substring(2, 4);
+    }
+    input.value = value;
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     loadSummary();
 });
