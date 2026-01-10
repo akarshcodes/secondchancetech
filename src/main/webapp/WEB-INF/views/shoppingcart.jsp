@@ -49,7 +49,7 @@
 
     <jsp:include page="footer.jsp" />
 
-    <script src="${pageContext.request.contextPath}/js/shoppingcart.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/shoppingcart.js?v=2" defer></script>
 
 </body>
 </html>

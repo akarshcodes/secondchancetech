@@ -70,7 +70,7 @@
 
     <jsp:include page="footer.jsp" />
 
-    <script src="${pageContext.request.contextPath}/js/step2.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/step2.js?v=2" defer></script>
 
 </body>
 </html>

@@ -50,7 +50,7 @@ function renderCart() {
         itemList.innerHTML = `
             <div style="text-align: center; padding: 40px; color: var(--text-secondary);">
                 <p style="font-size: 18px; margin-bottom: 20px;">Your cart is empty</p>
-                <a href="index.jsp" style="color: var(--primary-dark); text-decoration: underline;">Continue Shopping</a>
+                <a href="home" style="color: var(--primary-dark); text-decoration: underline;">Continue Shopping</a>
             </div>
         `;
         updateSummary();
