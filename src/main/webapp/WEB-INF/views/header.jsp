@@ -3,10 +3,14 @@
     <nav class="top-nav">
         <img src="${pageContext.request.contextPath}/assets/logo round.png" alt="SecondChance Logo" class="logo">
 
-        <div class="search-bar">
-             <img src="${pageContext.request.contextPath}/assets/icon search.png" alt="Search" class="nav-icon-small">
-             <input type="text" placeholder="Search" class="search-input">
-        </div>
+        <form action="${pageContext.request.contextPath}/gadgets" method="GET" class="search-form">
+            <div class="search-bar">
+                <button type="submit" style="background: none; border: none; padding: 0; cursor: pointer;">
+                    <img src="${pageContext.request.contextPath}/assets/icon search.png" alt="Search" class="nav-icon-small">
+                </button>
+                <input type="text" name="search" placeholder="Search" class="search-input">
+            </div>
+        </form>
 
         <div class="nav-links">
             <a href="${pageContext.request.contextPath}/home">Home</a>
@@ -14,7 +18,7 @@
         </div>
 
         <div class="header-icons">
-            <div class="icon cart" onclick="location.href='${pageContext.request.contextPath}/CartServlet'">
+            <div class="icon cart" onclick="location.href='${pageContext.request.contextPath}/shoppingcart'">
                 <img src="${pageContext.request.contextPath}/assets/icon cart.png" alt="Shopping Cart">
             </div>
             <div class="icon profile" onclick="location.href='${pageContext.request.contextPath}/UserServlet'">

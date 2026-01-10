@@ -9,7 +9,6 @@
 </head>
 <body>
     <section class="landing-banner">
-        <!-- Left Content -->
         <div class="landing-content">
             <a href="${pageContext.request.contextPath}/login" class="login-btn-top">Login</a>
 
@@ -21,23 +20,6 @@
 
             <a href="${pageContext.request.contextPath}/signup" class="btn-get-started">Get Started &rarr;</a>
         </div>
-
-        <!-- Decorative Pills Track -->
-        <div class="pill-track">
-            <div class="pill pill-green p1"></div>
-            <div class="pill pill-yellow p2"></div>
-            <div class="pill pill-green p3"></div>
-            <div class="pill pill-yellow p4"></div>
-            <div class="pill pill-green p5"></div>
-        </div>
-
-        <!-- Floating Product Images -->
-        <img src="${pageContext.request.contextPath}/assets/landing1.png" class="floating-img img-item1" alt="Product">
-        <img src="${pageContext.request.contextPath}/assets/landing2.png" class="floating-img img-item2" alt="Product">
-        <img src="${pageContext.request.contextPath}/assets/landing3.png" class="floating-img img-item3" alt="Product">
-        <img src="${pageContext.request.contextPath}/assets/landing4.png" class="floating-img img-item4" alt="Product">
-        <img src="${pageContext.request.contextPath}/assets/landing5.png" class="floating-img img-item5" alt="Product">
-
     </section>
 
 </body>
