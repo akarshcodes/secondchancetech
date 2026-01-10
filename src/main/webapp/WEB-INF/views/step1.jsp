@@ -75,7 +75,7 @@
 
         <!-- Action Buttons -->
         <div class="nav-footer">
-            <button class="btn btn-back" onclick="window.location.href='shoppingcart.jsp'">Back</button>
+            <button class="btn btn-back" onclick="window.location.href='shoppingcart'">Back</button>
             <button class="btn btn-next" id="nextBtn" onclick="goToNextStep()">Next</button>
         </div>
     </main>
@@ -122,7 +122,7 @@
 
     <jsp:include page="footer.jsp" />
 
-    <script src="${pageContext.request.contextPath}/js/step1.js"></script>
+    <script src="${pageContext.request.contextPath}/js/step1.js?v=2"></script>
 
 </body>
 </html>

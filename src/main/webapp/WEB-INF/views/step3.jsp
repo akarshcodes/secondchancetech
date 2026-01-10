@@ -127,7 +127,7 @@
 
                 <div class="button-footer">
                     <button type="button" class="btn btn-back"
-                            onclick="window.location.href='${pageContext.request.contextPath}/step2.jsp'">Back</button>
+                            onclick="window.location.href='${pageContext.request.contextPath}/step2'">Back</button>
                     <button type="submit" class="btn btn-pay">Pay</button>
                 </div>
             </form>
@@ -137,7 +137,7 @@
 
     <jsp:include page="footer.jsp" />
 
-    <script src="${pageContext.request.contextPath}/js/step3.js" defer></script>
+    <script src="${pageContext.request.contextPath}/js/step3.js?v=2" defer></script>
 
 </body>
 </html>

@@ -11,7 +11,7 @@
     <section class="landing-banner">
         <!-- Left Content -->
         <div class="landing-content">
-            <a href="${pageContext.request.contextPath}/shoppingcart.jsp" class="login-btn-top">Login</a>
+            <a href="${pageContext.request.contextPath}/login" class="login-btn-top">Login</a>
 
             <img src="${pageContext.request.contextPath}/assets/logo landscape.png" alt="Logo" class="landing-logo">
 
@@ -19,7 +19,7 @@
                 Discover SecondChance Tech, the easy and reliable platform dedicated exclusively to buy quality used electronic devices.
             </p>
 
-            <a href="${pageContext.request.contextPath}/index.jsp" class="btn-get-started">Get Started &rarr;</a>
+            <a href="${pageContext.request.contextPath}/signup" class="btn-get-started">Get Started &rarr;</a>
         </div>
 
         <!-- Decorative Pills Track -->

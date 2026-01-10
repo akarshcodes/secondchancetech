@@ -181,7 +181,7 @@
 
             // Save selected address to session
             sessionStorage.setItem('selectedAddress', JSON.stringify(selectedAddress));
-            window.location.href = 'step2.jsp';
+            window.location.href = 'step2';
         }
 
         // Save to session storage

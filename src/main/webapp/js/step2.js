@@ -82,10 +82,6 @@ const shippingOptions = [
             }));
         }
 
-        function goToNextStep() {
-            window.location.href = 'step3.jsp';
-        }
-
         // Initialize on page load
         document.addEventListener('DOMContentLoaded', function() {
             // Check if there's a saved shipping selection

@@ -63,8 +63,8 @@
 
         <!-- Action Buttons -->
         <footer class="button-group">
-            <button class="btn btn-back" onclick="window.location.href='${pageContext.request.contextPath}/step1.jsp'">Back</button>
-            <button class="btn btn-next" onclick="goToNextStep()">Next</button>
+            <button class="btn btn-back" onclick="window.location.href='${pageContext.request.contextPath}/step1'">Back</button>
+            <button class="btn btn-next" onclick="window.location.href='${pageContext.request.contextPath}/step3'">Next</button>
         </footer>
     </main>
 
